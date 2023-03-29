@@ -5,10 +5,7 @@ import cat.itacademy.barcelonactiva.sansaverdu.pau.s05.t01.n01.model.services.En
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -29,9 +26,10 @@ public class WebController {
         return "redirect:/getAll";
     }
 
-    @GetMapping("/update/{id}")
+    @GetMapping("/edit/{id}")
     public String update(Model model,@PathVariable int id){
         model.addAttribute("Branch",service.getOne(id));
+        model.addAttribute("Method","put");
         return "form";
     }
 
@@ -41,9 +39,16 @@ public class WebController {
         return "redirect:/getAll";
     }
 
+    @PutMapping("/update")
+    public String update(Branch branch){
+        service.save(branch);
+        return "redirect:/getAll";
+    }
+
     @GetMapping("/create")
     public String create(Model model){
-        model.addAttribute(new Branch());
+        model.addAttribute("Branch",new Branch());
+        model.addAttribute("Method","POST");
         return "form";
     }
 }

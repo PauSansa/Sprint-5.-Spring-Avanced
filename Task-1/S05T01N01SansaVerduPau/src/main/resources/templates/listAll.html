@@ -13,14 +13,14 @@
         <h1 class="display-5 fw-bold text-body-emphasis">Branch Manager</h1>
     </div>
     <!-- Tabla con estilo de Bootstrap -->
-    <table class="table table-striped">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Country</th>
                 <th>Area</th>
-                <td><a th:href="@{/add/}">Create New Branch</a></td>
+                <td><a th:href="@{/create}" class="btn btn-success">Create New Branch</a></td>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +32,7 @@
                 <td th:text="${branch.branchType}"></td>
 
                 <td>
-                    <a class="btn btn-warning" th:href="@{/update/} + ${branch.pk_BranchID}">Edit</a>
+                    <a class="btn btn-warning" th:href="@{/edit/} + ${branch.pk_BranchID}">Edit</a>
                     <a class="btn btn-danger" th:href="@{/delete/} + ${branch.pk_BranchID}">Delete</a>
                 </td>
             </tr>

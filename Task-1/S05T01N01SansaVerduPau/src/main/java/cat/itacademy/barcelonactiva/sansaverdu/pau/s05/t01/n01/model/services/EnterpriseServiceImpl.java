@@ -32,6 +32,8 @@ public class EnterpriseServiceImpl implements EnterpriseService {
         }
     }
 
+
+
     @Override
     public List<BranchDTO> getAll() {
         return data.findAll().stream().map(branchDTOMapper).toList();
@@ -47,4 +49,6 @@ public class EnterpriseServiceImpl implements EnterpriseService {
     public void delete(int id) {
         data.deleteById(id);
     }
+
+
 }

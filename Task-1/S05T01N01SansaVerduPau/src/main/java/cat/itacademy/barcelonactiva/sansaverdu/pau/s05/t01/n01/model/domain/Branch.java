@@ -10,7 +10,7 @@ import lombok.Data;
 public class Branch {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer pk_BranchID;
     private String branchName;
     private String branchCountry;
