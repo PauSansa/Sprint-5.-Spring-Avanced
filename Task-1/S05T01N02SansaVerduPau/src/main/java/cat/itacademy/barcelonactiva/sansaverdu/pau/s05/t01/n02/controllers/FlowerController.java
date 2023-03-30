@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -33,5 +34,19 @@ public class FlowerController {
         }
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity delete(@PathVariable int id){
+        if(service.delete(id)){
+            return ResponseEntity.status(200).body("The item has been deleted");
+        } else {
+            return ResponseEntity.status(404).body("Item not found");
+        }
+    }
 
+    @GetMapping("/getone/{id}")
+    public Optional<FlowerDTO> getOne(@PathVariable int id){
+        return service.getOne(id);
+    }
+
+    //TODO implementar update
 }
