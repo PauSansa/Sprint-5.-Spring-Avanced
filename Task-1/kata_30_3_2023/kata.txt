@@ -1,5 +1,0 @@
-hacer un ascensor que suba o baje
-
-Subir
-bajar
-tiene 15 pisos(solo )
