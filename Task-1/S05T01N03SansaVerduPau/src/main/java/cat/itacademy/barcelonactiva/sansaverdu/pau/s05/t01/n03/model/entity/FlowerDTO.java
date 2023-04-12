@@ -1,9 +1,13 @@
-package cat.itacademy.barcelonactiva.sansaverdu.pau.s05.t01.n02.model.dto;
+package cat.itacademy.barcelonactiva.sansaverdu.pau.s05.t01.n03.model.entity;
 
-import cat.itacademy.barcelonactiva.sansaverdu.pau.s05.t01.n02.model.entity.Flower;
+
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Builder
 public class FlowerDTO {
